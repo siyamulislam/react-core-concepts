@@ -84,7 +84,7 @@ function Users() {
   },[])
   return (
     <div>
-      <h2>Users:{users.length}</h2>
+      <h2>Active Customers: {users.length}</h2>
       <ul style={ulStyle}>
         {
           users.map(user=><li>{user.name}</li>)
