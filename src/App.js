@@ -44,7 +44,6 @@ function Products(props) {
     padding: '5px',
     margin: '5px',
     float: 'left',
-
   }
   const { name, price } = props.product
   return (
@@ -70,7 +69,7 @@ function Bag() {
   )
 }
 function Users() {
-  const ulStyle = {listStyleType: "none"}
+  const ulStyle = { listStyleType: "none" }
   const [users, setUser] = useState([]);
   useEffect(() => {
 
@@ -80,18 +79,15 @@ function Users() {
       setUser(data)
     }
     fetchData();
-
-  },[])
+  }, [])
   return (
     <div>
-      <h2>Active Customers: {users.length}</h2>
+      <h2>Active: {users.length}</h2>
       <ul style={ulStyle}>
         {
-          users.map(user=><li>{user.name}</li>)
+          users.map(user => <li>{user.name}</li>)
         }
       </ul>
-      {console.log(users)}
-      
     </div>
   )
 }
