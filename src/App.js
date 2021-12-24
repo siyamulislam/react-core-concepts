@@ -65,6 +65,10 @@ function Bag() {
       <h2> Bag: {count}</h2>
       <button onClick={addItem}>add</button>
       <button onClick={() => setCount(count - 1)}>remove</button>
+      <Cart ct={count+20}></Cart>
+      <h4> Tax: {count*.15}</h4>
+      <h3> Total: {count*20}</h3>
+
     </div>
   )
 }
@@ -88,6 +92,14 @@ function Users() {
           users.map(user => <li>{user.name}</li>)
         }
       </ul>
+    </div>
+  )
+}
+function Cart(props) {
+  let count = props.ct;
+  return (
+    <div>
+      <h3> Price: {count}</h3>
     </div>
   )
 }
