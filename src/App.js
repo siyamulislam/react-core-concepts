@@ -5,10 +5,10 @@ import './App.css';
 function App() {
 
   const productList = [
-    { name: 'Alu', price: 20 },
-    { name: 'Potol', price: 45 },
-    { name: 'Begun', price: 80 },
-    { name: 'Piyaj', price: 43 }
+    { id:1001, name: 'Alu', price: 20 },
+    { id:1002, name: 'Potol', price: 45 },
+    { id:1003, name: 'Begun', price: 80 },
+    { id:1004, name: 'Piyaj', price: 43 }
   ]
   const productName = productList.map(product => product.name)
 
@@ -27,7 +27,7 @@ function App() {
       <Products product={productList[2]}></Products>
       <Products product={productList[3]}></Products>
       {
-        productList.map(p => <Products product={p}></Products>)
+        productList.map(p => <Products product={p} key={p.id}></Products>)
       }
 
 
@@ -47,9 +47,9 @@ function Products(props) {
   }
   const { name, price } = props.product
   return (
-    <div className="product" style={boxStyle}>
-      <h3>Name: {name}</h3>
-      <h2>{price} <span>$</span></h2>
+    <div style={boxStyle}>
+      <h3 >Name: {name}</h3>
+      <h2 >{price} <span>$</span></h2>
       <button>Buy Now!</button>
     </div>
   )
@@ -89,7 +89,7 @@ function Users() {
       <h2>Active: {users.length}</h2>
       <ul style={ulStyle}>
         {
-          users.map(user => <li>{user.name}</li>)
+          users.map(user => <li key={user.id}>{user.name}</li>)
         }
       </ul>
     </div>
@@ -99,7 +99,7 @@ function Cart(props) {
   let count = props.ct;
   return (
     <div>
-      <h3> Price: {count}</h3>
+      <h3 > Price: {count}</h3>
     </div>
   )
 }
